@@ -74,6 +74,15 @@ body.locked{overflow:hidden;height:100%}
 .seal img{width:100%;display:block;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))}
 #gate.on .seal{transform:translate(-50%,-50%) scale(.55) rotate(-24deg);opacity:0}
 
+/* โลโก้ S&N กลางซองหลังเปิดเสร็จ */
+.envmono{position:absolute;left:50%;top:54%;width:108px;z-index:9;
+  transform:translate(-50%,-50%) scale(.86);opacity:0;pointer-events:none;
+  transition:transform .9s cubic-bezier(.22,1.1,.36,1), opacity .9s}
+.envmono img{width:100%;display:block;
+  filter:drop-shadow(0 3px 6px rgba(94,74,52,.22))}
+#gate.on .envmono{opacity:1;transform:translate(-50%,-50%) scale(1);
+  transition-delay:1.55s}
+
 .pops{position:absolute;left:50%;top:0;width:0;height:0;z-index:6}
 .pop{position:absolute;width:104px;padding:7px 7px 22px;background:#FFFDF6;
   border-radius:2px;box-shadow:0 14px 28px rgba(0,0,0,.42);
@@ -321,6 +330,7 @@ footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
   .envwrap{width:238px;height:163px}
   .env-flap{border-left-width:119px;border-right-width:119px;border-top-width:91px}
   .seal{width:54px;height:54px}
+  .envmono{width:94px}
   .pop{width:90px;padding:6px 6px 19px}
   #gate.on .p1{transform:translate(-138%,-116px) rotate(-15deg) scale(1)}
   #gate.on .p2{transform:translate(-50%,-148px) rotate(2deg) scale(1.04)}
@@ -356,6 +366,7 @@ footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
         <div class="env-front"></div>
         <div class="env-flap"></div>
         <div class="seal"><img src="https://nopparut-win.github.io/wedding/assets/deco/wax-seal.png" alt=""></div>
+        <div class="envmono"><img src="https://nopparut-win.github.io/wedding/assets/icons/monogram.png" alt="S and N"></div>
         <div class="flo fL"><img src="https://nopparut-win.github.io/wedding/assets/deco/bouquet-left.png" alt=""></div>
         <div class="flo fR"><img src="https://nopparut-win.github.io/wedding/assets/deco/bouquet-right.png" alt=""></div>
       </div>
