@@ -11,7 +11,7 @@ assets/           รูปภาพทั้งหมด (เสิร์ฟจ
   qr-promptpay.jpg
 gas/
   index.html      ← ไฟล์ที่ต้องนำไปวางแทน index.html ใน Google Apps Script
-  Code.gs         ตัวอย่าง doGet / saveRsvp ฝั่ง server (อ้างอิง)
+  Code.gs         โค้ดฝั่ง server ตัวจริงที่ใช้อยู่ใน Apps Script (doGet / saveRsvp)
 ```
 
 ## Flow
@@ -24,7 +24,7 @@ gas/
 ## อัปเดตหน้าการ์ด
 
 1. แก้ `gas/index.html`
-2. คัดลอกเนื้อหาทั้งไฟล์ไปวางทับ `index.html` ในโปรเจกต์ Apps Script
+2. คัดลอกเนื้อหาทั้งไฟล์ไปวางทับไฟล์ `Index.html` ในโปรเจกต์ Apps Script (ชื่อไฟล์ต้องเป็น `Index` ตามที่ doGet อ้าง)
 3. Deploy → Manage deployments → แก้ไข deployment เดิม → New version
    (ถ้าสร้าง deployment ใหม่ URL `/exec` จะเปลี่ยน ต้องแก้ใน `index.html` ที่ root ด้วย)
 
@@ -36,4 +36,4 @@ gas/
 ## หมายเหตุ
 
 - โฟลเดอร์ `ใช้ทำ Ecard/` (ไฟล์ต้นฉบับ, PDF, ร่างที่ฝัง base64) และ `old/` ถูก ignore ไม่ขึ้น git
-- `Code.gs` ต้องตั้ง `setXFrameOptionsMode(ALLOWALL)` มิฉะนั้น GitHub Pages ฝัง iframe ไม่ได้
+- `Code.gs` ตั้ง `setXFrameOptionsMode(ALLOWALL)` ไว้แล้ว ห้ามเอาออก มิฉะนั้น GitHub Pages ฝัง iframe ไม่ได้

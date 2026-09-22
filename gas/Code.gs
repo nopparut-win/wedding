@@ -1,57 +1,74 @@
-/**
- * Google Apps Script – Wedding E-card (Supawadee & Nopparut)
- *
- * ไฟล์นี้เป็นตัวอย่างอ้างอิงของฝั่ง server ที่ index.html ต้องการ
- * ถ้าโปรเจกต์ Apps Script เดิมมี doGet / saveRsvp อยู่แล้ว ไม่ต้องแทนที่
- * แค่ตรวจว่า:
- *   1. doGet ตั้ง XFrameOptionsMode = ALLOWALL  (เพื่อให้ GitHub Pages ฝัง iframe ได้)
- *   2. doGet เพิ่ม meta viewport ผ่าน addMetaTag  (HtmlService ไม่อ่าน <meta viewport> ในไฟล์ html)
- *   3. saveRsvp(fields) รับ { status, name, count, tel, side, note, wish } และคืน { ok: true }
- *
- * Deploy: Deploy > New deployment > Web app
- *   Execute as: Me   /   Who has access: Anyone
- * แล้วนำ URL /exec ไปใส่ใน index.html (wrapper) ที่ root ของ repo
- */
+/*** RSVP งานแต่ง สุภาวดี & นพรุจ — 30 ต.ค. 2569 ***/
 
-var SHEET_NAME = 'RSVP';
+// วาง ID ของชีทใหม่ตรงนี้ (เอาจาก URL: /spreadsheets/d/<<ID>>/edit)
+const SHEET_ID   = '1tAe0X1KFCnnt6wIStv63_XUJxkFRu06OhTg4wcbGPek';
+const SHEET_NAME = 'RSVP';
 
+const HEADERS = ['วันที่-เวลา','สถานะ','ชื่อ-นามสกุล','จำนวนผู้ร่วมงาน',
+                 'เบอร์โทร','มาในนามฝ่าย','หมายเหตุ','คำอวยพร'];
+
+/** เสิร์ฟหน้าเว็บ */
 function doGet() {
-  return HtmlService.createHtmlOutputFromFile('index')
-    .setTitle('Supawadee & Nopparut · 30.10.2026')
+  return HtmlService.createHtmlOutputFromFile('Index')
+    .setTitle('Supawadee & Nopparut')
     .addMetaTag('viewport', 'width=device-width, initial-scale=1, viewport-fit=cover')
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
-/**
- * บันทึกคำตอบรับลง Google Sheet (sheet ชื่อ RSVP ใน spreadsheet ที่ผูกกับสคริปต์)
- * @param {{status:string,name:string,count:string,tel:string,side:string,note:string,wish:string}} f
- * @return {{ok:boolean}}
- */
-function saveRsvp(f) {
-  f = f || {};
-  var lock = LockService.getScriptLock();
-  lock.waitLock(10000);
+/** รันครั้งเดียวหลังใส่ SHEET_ID เพื่อสร้างแท็บ + หัวตาราง */
+function setupSheet() {
+  const sh = getSheet();
+  sh.getRange(1, 1, 1, HEADERS.length)
+    .setValues([HEADERS])
+    .setFontWeight('bold')
+    .setBackground('#EFE7CF');
+  sh.setFrozenRows(1);
+  sh.setColumnWidth(1, 150);
+  sh.setColumnWidth(3, 200);
+  sh.setColumnWidth(7, 260);
+  sh.setColumnWidth(8, 320);
+  return 'พร้อมใช้งาน: ' + sh.getParent().getUrl();
+}
+
+function getSheet() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  return ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+}
+
+/** เรียกจากหน้าเว็บผ่าน google.script.run */
+function saveRsvp(d) {
+  d = d || {};
+  const name = clean(d.name);
+  if (!name) return { ok: false, error: 'no-name' };
+
+  const lock = LockService.getScriptLock();
   try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sh = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+    lock.waitLock(20000);
+    const sh = getSheet();
     if (sh.getLastRow() === 0) {
-      sh.appendRow(['เวลา', 'สถานะ', 'ชื่อ – นามสกุล', 'จำนวน', 'เบอร์โทร', 'ฝ่าย', 'หมายเหตุ', 'คำอวยพร']);
+      sh.appendRow(HEADERS);
+      sh.setFrozenRows(1);
     }
     sh.appendRow([
-      new Date(),
-      String(f.status || ''),
-      String(f.name || ''),
-      String(f.count || ''),
-      "'" + String(f.tel || ''),   // กัน Sheets ตัด 0 นำหน้าเบอร์โทร
-      String(f.side || ''),
-      String(f.note || ''),
-      String(f.wish || '')
+      Utilities.formatDate(new Date(), 'Asia/Bangkok', 'dd/MM/yyyy HH:mm:ss'),
+      clean(d.status),
+      name,
+      clean(d.count),
+      "'" + clean(d.tel),          // กัน Sheets ตัดเลข 0 ข้างหน้า
+      clean(d.side),
+      clean(d.note),
+      clean(d.wish)
     ]);
+    SpreadsheetApp.flush();
     return { ok: true };
-  } catch (e) {
-    console.error(e);
-    return { ok: false, error: String(e) };
+  } catch (err) {
+    console.error(err);
+    return { ok: false, error: String(err) };
   } finally {
-    lock.releaseLock();
+    try { lock.releaseLock(); } catch (e) {}
   }
+}
+
+function clean(v) {
+  return String(v == null ? '' : v).replace(/^[=+\-@]/, "'$&").trim().slice(0, 1000);
 }
