@@ -1,0 +1,20 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Claude Code / OMC state
+.omc/
+.claude/
+
+# raw design sources (large originals, PDFs, base64 drafts) - not needed on GitHub Pages
+ใช้ทำ Ecard/
+
+# superseded files kept locally for reference
+old/
+
+# scratch
+*.tmp
+*.log

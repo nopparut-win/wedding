@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base target="_top">
+<title>Supawadee &amp; Nopparut &middot; 30.10.2026</title>
+<meta name="description" content="ขอเรียนเชิญร่วมงานมงคลสมรส สุภาวดี &amp; นพรุจ วันศุกร์ที่ 30 ตุลาคม 2569">
+<meta property="og:title" content="Supawadee &amp; Nopparut &middot; 30.10.2026">
+<meta property="og:description" content="พิธีมงคลสมรส · BLOOMMORIES เชียงใหม่">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>:root{color-scheme:light}html,body{margin:0;padding:0;background:#EFE9DD}</style>
+</head>
+<body>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Noto+Serif+Thai:wght@200;300;400;500&display=swap');
+
+:root{
+  --cream:#FBF8F0; --cream-2:#F7F1E1; --panel:#FAF5E6; --paper:#FFFDF7;
+  --ink:#2E2A25; --soft:#6B6155; --brown:#8B6E51; --maroon:#7A3B32;
+  --sage:#638266; --muted:#BBAC9C; --line:rgba(139,110,81,.26);
+  --th:'Noto Serif Thai','Cormorant Garamond',serif;
+  --en:'Cormorant Garamond','Noto Serif Thai',serif;
+  --dp:'Italiana','Cormorant Garamond',serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:#EFE9DD}
+body.locked{overflow:hidden;height:100%}
+
+/* ---------------- ENVELOPE GATE ---------------- */
+#gate{position:fixed;inset:0;z-index:999;overflow:hidden;
+  background:#1a1713;display:flex;align-items:center;justify-content:center;
+  transition:opacity 1s ease, visibility 1s}
+#gate .bg{position:absolute;inset:0;background-image:url('https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-306.jpg');
+  background-size:cover;background-position:50% 50%;
+  transform:scale(1.08);filter:brightness(.42) saturate(.75) blur(1px);
+  transition:filter 1.4s ease, transform 6s ease}
+#gate.on .bg{filter:brightness(.62) saturate(.9) blur(0);transform:scale(1)}
+#gate .vig{position:absolute;inset:0;
+  background:radial-gradient(120% 80% at 50% 45%,rgba(0,0,0,0) 30%,rgba(0,0,0,.62) 100%)}
+
+.stage{position:relative;width:100%;max-width:420px;padding:0 18px;text-align:center;z-index:2}
+
+.kicker-en{font-family:var(--en);font-size:11px;letter-spacing:.42em;
+  text-transform:uppercase;color:rgba(255,253,244,.78);margin:0 0 6px}
+.gname{font-family:var(--en);font-style:italic;font-size:27px;color:#FFFDF4;
+  margin:0 0 26px;letter-spacing:.02em;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+
+.envwrap{position:relative;width:272px;height:186px;margin:0 auto;
+  transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+#gate.on .envwrap{transform:translateY(58px)}
+.env{position:absolute;inset:0;perspective:1100px}
+.env-body{position:absolute;inset:0;border-radius:3px;
+  background:linear-gradient(160deg,#F7EFDD,#EFE3CC);
+  box-shadow:0 26px 50px rgba(0,0,0,.45),0 2px 0 rgba(255,255,255,.4) inset}
+.env-flap{position:absolute;top:0;left:0;width:100%;height:0;z-index:8;
+  border-left:136px solid transparent;border-right:136px solid transparent;
+  border-top:104px solid #F2E7D2;
+  transform-origin:top center;transform:rotateX(0deg);
+  transition:transform 1s cubic-bezier(.5,0,.3,1), border-top-color 1s, z-index 0s;
+  filter:drop-shadow(0 3px 3px rgba(0,0,0,.14))}
+#gate.on .env-flap{transform:rotateX(178deg);border-top-color:#E6D9BF;z-index:1;
+  transition:transform 1s cubic-bezier(.5,0,.3,1) .15s, border-top-color 1s, z-index 0s .55s}
+.env-front{position:absolute;inset:0;z-index:7;border-radius:3px;
+  background:linear-gradient(175deg,#F9F2E3,#F0E5CE 60%,#EADDC3);
+  clip-path:polygon(0 36%,50% 99%,100% 36%,100% 100%,0 100%);
+  box-shadow:0 -1px 0 rgba(255,255,255,.5) inset}
+.seal{position:absolute;left:50%;top:52%;width:62px;height:62px;z-index:9;
+  transform:translate(-50%,-50%);
+  transition:transform .7s cubic-bezier(.3,1.6,.5,1), opacity .7s}
+.seal img{width:100%;display:block;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))}
+#gate.on .seal{transform:translate(-50%,-50%) scale(.55) rotate(-24deg);opacity:0}
+
+.pops{position:absolute;left:50%;top:0;width:0;height:0;z-index:6}
+.pop{position:absolute;width:104px;padding:7px 7px 22px;background:#FFFDF6;
+  border-radius:2px;box-shadow:0 14px 28px rgba(0,0,0,.42);
+  transform:translate(-50%,10px) rotate(0deg) scale(.6);opacity:0;
+  transition:transform 1s cubic-bezier(.22,1.1,.36,1), opacity .5s}
+.pop img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:1px}
+#gate.on .pop{opacity:1}
+
+/* ดอกไม้ประดับตอนซองเปิด */
+.flo{position:absolute;opacity:0;
+  transition:transform 1.15s cubic-bezier(.22,1.1,.36,1), opacity .8s;
+  filter:drop-shadow(0 9px 15px rgba(0,0,0,.3))}
+.flo img{width:100%;display:block}
+.fA{width:272px;transform:translate(-50%,-150px) scale(.55)}
+.flo.side{left:50%;top:0;width:106px;z-index:10}
+.fL{transform:translate(-150%,-4px) scale(.5) rotate(-6deg)}
+.fR{transform:translate(50%,0) scale(.5) rotate(5deg)}
+#gate.on .flo{opacity:1}
+#gate.on .fA{transform:translate(-50%,-224px) scale(1);transition-delay:.7s}
+#gate.on .fL{transform:translate(-150%,-34px) scale(1) rotate(-6deg);transition-delay:1.3s}
+#gate.on .fR{transform:translate(50%,-30px) scale(1) rotate(5deg);transition-delay:1.42s}
+#gate.on .p1{transform:translate(-142%,-132px) rotate(-15deg) scale(1);transition-delay:.85s}
+#gate.on .p2{transform:translate(-50%,-168px) rotate(2deg) scale(1.04);transition-delay:1.02s}
+#gate.on .p3{transform:translate(42%,-128px) rotate(14deg) scale(1);transition-delay:1.19s}
+
+.tag{position:absolute;left:50%;top:100%;z-index:10;
+  transform:translate(-50%,6px) scale(.8);opacity:0;
+  transition:transform .9s cubic-bezier(.22,1.1,.36,1) 1.5s, opacity .7s 1.5s}
+#gate.on .tag{transform:translate(-50%,22px) scale(1);opacity:1}
+.tag .oval{width:196px;padding:17px 10px 15px;border-radius:50%/50%;
+  background:linear-gradient(170deg,#FBF6E9,#F1E7D0);
+  border:1px solid rgba(139,110,81,.35);
+  box-shadow:0 12px 26px rgba(0,0,0,.34)}
+.tag .t1{font-family:var(--en);font-style:italic;font-size:20px;color:var(--brown);
+  letter-spacing:.01em;line-height:1}
+.tag .t2{font-family:var(--dp);font-size:14px;letter-spacing:.24em;
+  color:var(--ink);margin-top:7px}
+
+.hint{margin-top:40px;transition:opacity .6s}
+.hint .h1{font-family:var(--en);font-style:italic;font-size:17px;
+  color:rgba(255,253,244,.9);margin:0}
+.hint .h2{font-family:var(--th);font-size:12px;letter-spacing:.14em;
+  color:rgba(255,253,244,.62);margin:5px 0 0;font-weight:300}
+#gate.on .hint{opacity:0;pointer-events:none}
+
+.enter{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  z-index:20;opacity:0;pointer-events:none;transition:opacity .8s 2.6s;
+  border:1px solid rgba(255,253,244,.5);background:rgba(255,253,244,.08);
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#FFFDF4;border-radius:2px;
+  padding:11px 26px;font-family:var(--th);font-size:12.5px;letter-spacing:.2em;
+  cursor:pointer;font-weight:300}
+#gate.on .enter{opacity:1;pointer-events:auto}
+#gate.gone{opacity:0;visibility:hidden}
+
+/* ---------------- CARD ---------------- */
+.ec{max-width:520px;margin:0 auto;background:var(--paper);color:var(--ink);
+  font-family:var(--th);font-weight:300;line-height:1.75;
+  box-shadow:0 0 60px rgba(0,0,0,.09)}
+.rv{opacity:0;transform:translateY(22px);
+  transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+.kick{font-family:var(--th);font-size:11px;letter-spacing:.34em;color:var(--brown);
+  text-align:center;font-weight:300;margin:0}
+.kick-en{font-family:var(--en);font-size:11px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--brown);text-align:center;margin:0}
+.rule{height:1px;background:var(--line);margin:0 auto}
+.thin{width:54px;height:1px;background:var(--brown);opacity:.45;margin:0 auto}
+
+.sod{padding:64px 26px 26px;text-align:center;background:var(--paper)}
+.sod .big{font-family:var(--dp);font-size:34px;letter-spacing:.2em;margin:16px 0 0;line-height:1.2}
+.sod .th{font-size:14px;color:var(--soft);margin:12px 0 0}
+.sod .script{font-family:var(--en);font-style:italic;font-size:26px;
+  color:var(--brown);margin:0}
+
+/* ภาพโพลารอยด์ + ดอกไม้ แทนโลโก้ */
+.fanart{position:relative;width:336px;height:300px;margin:0 auto 34px}
+.fanart .fa-arch{position:absolute;left:50%;top:0;width:330px;
+  transform:translateX(-50%);opacity:.96}
+.fanart .fan{position:absolute;left:50%;top:78px;width:0;height:0}
+.fanart .fp{position:absolute;width:112px;padding:7px 7px 22px;background:#FFFDF6;
+  border-radius:2px;box-shadow:0 12px 24px rgba(72,56,38,.22)}
+.fanart .fp img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.fanart .f1{transform:translate(-118%,14px) rotate(-11deg)}
+.fanart .f3{transform:translate(18%,12px) rotate(10deg)}
+.fanart .f2{transform:translate(-50%,0) rotate(-1deg);z-index:2}
+.fanart .fa-sp{position:absolute;bottom:-14px;width:122px;opacity:.95}
+.fanart .fa-l{left:-26px}
+.fanart .fa-r{right:-26px}
+@media (max-width:400px){
+  .fanart{width:300px;height:272px}
+  .fanart .fa-arch{width:296px}
+  .fanart .fp{width:100px}
+  .fanart .fan{top:70px}
+  .fanart .fa-sp{width:108px}
+  .fanart .fa-l{left:-16px}
+  .fanart .fa-r{right:-16px}
+}
+
+.mono{display:block;margin:0 auto}
+.mono.lg{width:132px}
+.mono.sm{width:104px;opacity:.95}
+
+.inv{padding:10px 30px 52px;text-align:center}
+.inv .host{font-size:14.5px;color:var(--soft);margin:22px 0 0;line-height:2}
+.inv .lead{font-size:13.5px;color:var(--soft);margin:22px auto 0;max-width:330px;line-height:2}
+.inv .n1{font-family:var(--dp);font-size:32px;letter-spacing:.16em;margin:26px 0 0;line-height:1.2}
+.inv .amp{font-family:var(--en);font-style:italic;font-size:21px;
+  color:var(--brown);margin:6px 0}
+.inv .nth{font-size:14px;color:var(--soft);margin:18px 0 0;line-height:2}
+
+.ph-wrap{padding:0 26px}
+.ph-wrap img{width:100%;display:block;border-radius:2px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 26px}
+.pair img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:2px}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 26px}
+.trio img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:2px}
+.hero img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+
+.panel{background:var(--panel);padding:44px 26px}
+
+.tl{max-width:330px;margin:26px auto 0}
+.tl-row{display:grid;grid-template-columns:42px 22px 1fr;align-items:center;
+  column-gap:12px;min-height:74px}
+.tl-ic{width:34px;opacity:.9}
+.tl-line{position:relative;height:100%;min-height:74px}
+.tl-line:before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:var(--line);transform:translateX(-50%)}
+.tl-row:first-child .tl-line:before{top:50%}
+.tl-row:last-child .tl-line:before{bottom:50%}
+.tl-dot{position:absolute;left:50%;top:50%;width:7px;height:7px;border-radius:50%;
+  background:var(--brown);transform:translate(-50%,-50%)}
+.tl-t{font-family:var(--dp);font-size:20px;letter-spacing:.08em;line-height:1.2}
+.tl-l{font-size:13px;color:var(--soft);margin-top:2px;line-height:1.5}
+
+.dress{text-align:center;padding-top:34px}
+.dress .dc{font-family:var(--dp);font-size:20px;letter-spacing:.05em;margin:12px 0 0;line-height:1.4}
+.dots{display:flex;justify-content:center;gap:11px;margin-top:20px;flex-wrap:wrap}
+.dot{width:26px;height:26px;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.09)}
+
+.venue{text-align:center}
+.venue .vn{font-family:var(--dp);font-size:30px;letter-spacing:.2em;margin:14px 0 0;line-height:1.3}
+.venue .vs{font-size:14px;color:var(--soft);margin:10px 0 0}
+.btn-dark{display:inline-block;margin-top:22px;background:#1E1B17;color:#F7F1E1;
+  text-decoration:none;font-family:var(--th);font-size:12.5px;letter-spacing:.2em;
+  padding:13px 30px;border-radius:1px;font-weight:300}
+
+.cd{max-width:360px;margin:0 auto;text-align:center}
+.cd .dt{font-family:var(--dp);font-size:31px;letter-spacing:.2em;margin:18px 0 0;line-height:1.2}
+.cd .thd{font-size:13.5px;color:var(--soft);margin:12px 0 0}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:26px 0 0}
+.cd-n{font-family:var(--dp);font-size:30px;line-height:1;letter-spacing:.02em}
+.cd-u{font-size:10.5px;letter-spacing:.14em;color:var(--soft);margin-top:9px}
+
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 26px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:2px}
+.gal img.w{grid-column:span 2;aspect-ratio:16/10}
+
+.rsvp{text-align:center}
+.rsvp .q{font-size:15.5px;color:var(--ink);margin:16px auto 0;max-width:320px;line-height:1.8}
+
+.step{display:none}
+.step.on{display:block;animation:fadeup .55s ease both}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.btns{display:grid;gap:12px;max-width:310px;margin:28px auto 0}
+.btn{border:1px solid #1E1B17;background:transparent;color:var(--ink);
+  font-family:var(--th);font-size:14px;letter-spacing:.08em;font-weight:300;
+  padding:17px 10px;border-radius:1px;cursor:pointer;
+  transition:background .3s,color .3s,border-color .3s}
+.btn.sel{background:#14120F;border-color:#14120F;color:#F7F1E1}
+
+.form{max-width:310px;margin:26px auto 0;text-align:left}
+.fld{margin-bottom:18px}
+.fld label{display:block;font-size:11px;letter-spacing:.24em;color:var(--brown);
+  margin-bottom:7px;font-weight:300}
+.fld input,.fld select,.fld textarea{width:100%;font-family:var(--th);font-weight:300;
+  font-size:14.5px;color:var(--ink);background:#FFFDF7;border:1px solid var(--line);
+  border-radius:1px;padding:13px 12px;outline:none;-webkit-appearance:none;appearance:none;
+  transition:border-color .25s}
+.fld select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%238B6E51' stroke-width='1.2' d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;background-size:11px;
+  padding-right:34px}
+.fld input[type=number]{-moz-appearance:textfield}
+.fld textarea{min-height:92px;resize:vertical;line-height:1.7}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--brown)}
+.fld input::placeholder,.fld textarea::placeholder{color:#B4A895}
+
+.send{width:100%;margin-top:6px;background:#14120F;color:#F7F1E1;border:none;
+  font-family:var(--th);font-size:14px;letter-spacing:.2em;font-weight:300;
+  padding:17px 10px;border-radius:1px;cursor:pointer;transition:opacity .25s}
+.send:disabled{opacity:.45;cursor:default}
+.back{display:block;margin:16px auto 0;background:none;border:none;color:var(--soft);
+  font-family:var(--th);font-size:12.5px;letter-spacing:.14em;cursor:pointer;
+  border-bottom:1px solid var(--line);padding:3px 2px;font-weight:300}
+.err{font-size:12.5px;color:#9B4B3F;margin:0 0 14px;min-height:0;display:none}
+.err.show{display:block}
+
+.qrbox{margin:24px auto 6px;max-width:262px;background:#fff;padding:14px;
+  border-radius:2px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.qrbox img{width:100%;display:block;border-radius:2px}
+.qrcap{font-size:12.5px;color:var(--soft);margin:12px 0 0}
+
+.done{max-width:320px;margin:0 auto;text-align:center}
+.done .dh{font-family:var(--dp);font-size:24px;letter-spacing:.08em;margin:16px 0 0}
+.done .dp{font-size:14px;color:var(--soft);margin:14px 0 0;line-height:1.9}
+.done .warn{font-size:12.5px;color:#9B4B3F;margin:12px 0 0;line-height:1.8}
+.done .warn[hidden]{display:none}
+.done .alt{display:inline-block;margin:14px auto 0;font-size:13px;color:var(--brown);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.done .alt[hidden]{display:none}
+
+footer{text-align:center;padding:52px 26px 64px;background:var(--paper)}
+footer .fn{font-family:var(--en);font-style:italic;font-size:19px;
+  color:var(--brown);margin:18px 0 0}
+footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
+  color:var(--soft);margin:8px 0 0}
+
+@media(max-width:370px){
+  .envwrap{width:238px;height:163px}
+  .env-flap{border-left-width:119px;border-right-width:119px;border-top-width:91px}
+  .seal{width:54px;height:54px}
+  .pop{width:90px;padding:6px 6px 19px}
+  #gate.on .p1{transform:translate(-138%,-116px) rotate(-15deg) scale(1)}
+  #gate.on .p2{transform:translate(-50%,-148px) rotate(2deg) scale(1.04)}
+  #gate.on .p3{transform:translate(38%,-112px) rotate(14deg) scale(1)}
+  .fA{width:234px}
+  .flo.side{width:92px}
+  #gate.on .fA{transform:translate(-50%,-196px) scale(1)}
+  #gate.on .fL{transform:translate(-146%,-30px) scale(1) rotate(-6deg)}
+  #gate.on .fR{transform:translate(46%,-26px) scale(1) rotate(5deg)}
+  .tag .oval{width:176px}
+  .gname{font-size:24px}
+  .inv .n1{font-size:26px}
+  .sod .big{font-size:28px}
+  .cd .dt{font-size:26px}
+  .venue .vn{font-size:24px}
+  .dress .dc{font-size:17px}
+}
+</style>
+
+<div id="gate">
+  <div class="bg"></div><div class="vig"></div>
+  <div class="stage">
+    <p class="kicker-en">A love letter from</p>
+    <p class="gname">Supawadee <span style="font-style:normal;letter-spacing:.1em">and</span> Nopparut</p>
+
+    <div class="envwrap">
+      <div class="env">
+        <div class="env-body"></div>
+        <div class="pops">
+          <div class="flo fA"><img src="https://nopparut-win.github.io/wedding/assets/deco/flower-arch.png" alt=""></div>
+          <div class="pop p1"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-17.jpg" alt=""></div>
+          <div class="pop p2"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-203.jpg" alt=""></div>
+          <div class="pop p3"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-313.jpg" alt=""></div>
+        </div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="seal"><img src="https://nopparut-win.github.io/wedding/assets/deco/wax-seal.png" alt=""></div>
+        <div class="flo side fL"><img src="https://nopparut-win.github.io/wedding/assets/deco/flower-left.png" alt=""></div>
+        <div class="flo side fR"><img src="https://nopparut-win.github.io/wedding/assets/deco/flower-right.png" alt=""></div>
+      </div>
+      <div class="tag"><div class="oval">
+        <div class="t1">Save our Date</div>
+        <div class="t2">30.10.26</div>
+      </div></div>
+    </div>
+
+    <div class="hint">
+      <p class="h1">Tap to open</p>
+      <p class="h2">แตะเพื่อเปิดซอง</p>
+    </div>
+  </div>
+  <button class="enter" id="enterBtn" type="button">เปิดอ่านการ์ด</button>
+</div>
+
+<div class="ec" id="card">
+
+  <section class="sod rv">
+    <p class="script">Save our Date</p>
+    <p class="big">30 · 10 · 2026</p>
+    <p class="th">วันศุกร์ที่ ๓๐ ตุลาคม พ.ศ. ๒๕๖๙</p>
+  </section>
+
+  <section class="inv rv">
+    <div class="fanart">
+      <img class="fa-arch" src="https://nopparut-win.github.io/wedding/assets/deco/flower-arch.png" alt="">
+      <div class="fan">
+        <div class="fp f1"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-17.jpg" alt=""></div>
+        <div class="fp f3"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-313.jpg" alt=""></div>
+        <div class="fp f2"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-203.jpg" alt=""></div>
+      </div>
+      <img class="fa-sp fa-l" src="https://nopparut-win.github.io/wedding/assets/deco/flower-left.png" alt="">
+      <img class="fa-sp fa-r" src="https://nopparut-win.github.io/wedding/assets/deco/flower-right.png" alt="">
+    </div>
+    <p class="host">นายจิรวัฒน์ สุกใส · นางธัญพร สุกใส<br>นางนิธินาถ โตงิ้ว</p>
+    <p class="lead">มีความยินดีขอเรียนเชิญท่านเพื่อเป็นเกียรติ<br>เนื่องในพิธีมงคลสมรสระหว่าง</p>
+    <p class="n1">SUPAWADEE</p>
+    <p class="amp">and</p>
+    <p class="n1">NOPPARUT</p>
+    <p class="nth">นางสาวสุภาวดี สุกใส<br>และ<br>ร.ต.อ.นพรุจ โตงิ้ว</p>
+  </section>
+
+  <section class="ph-wrap rv" style="padding-bottom:48px">
+    <img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-38.jpg" alt="">
+  </section>
+
+  <section class="panel rv">
+    <p class="kick">กำหนดการ</p>
+    <p class="kick-en" style="margin-top:6px">Schedule</p>
+
+    <div class="tl">
+      <div class="tl-row">
+        <img class="tl-ic" src="https://nopparut-win.github.io/wedding/assets/icons/camera.png" alt="">
+        <div class="tl-line"><span class="tl-dot"></span></div>
+        <div><div class="tl-t">17.00</div><div class="tl-l">ลงทะเบียน · ถ่ายภาพร่วมกับคู่บ่าวสาว</div></div>
+      </div>
+      <div class="tl-row">
+        <img class="tl-ic" src="https://nopparut-win.github.io/wedding/assets/icons/dinner.png" alt="">
+        <div class="tl-line"><span class="tl-dot"></span></div>
+        <div><div class="tl-t">18.00</div><div class="tl-l">รับประทานอาหาร</div></div>
+      </div>
+      <div class="tl-row">
+        <img class="tl-ic" src="https://nopparut-win.github.io/wedding/assets/icons/dance.png" alt="">
+        <div class="tl-line"><span class="tl-dot"></span></div>
+        <div><div class="tl-t">19.00</div><div class="tl-l">พิธีฉลองมงคลสมรส</div></div>
+      </div>
+      <div class="tl-row">
+        <img class="tl-ic" src="https://nopparut-win.github.io/wedding/assets/icons/party.png" alt="">
+        <div class="tl-line"><span class="tl-dot"></span></div>
+        <div><div class="tl-t">21.00</div><div class="tl-l">After Party</div></div>
+      </div>
+    </div>
+
+    <div class="dress">
+      <div class="thin" style="margin-bottom:26px"></div>
+      <p class="kick">การแต่งกาย</p>
+      <p class="dc">Dress Code : Formal Wedding Attire</p>
+      <div class="dots">
+        <span class="dot" style="background:#FFFE9E"></span>
+        <span class="dot" style="background:#8B6E51"></span>
+        <span class="dot" style="background:#BBAC9C"></span>
+        <span class="dot" style="background:#638266"></span>
+        <span class="dot" style="background:#C9C8CD"></span>
+        <span class="dot" style="background:#F4EAD8"></span>
+        <span class="dot" style="background:#FBFFD7"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pair rv" style="padding-top:48px"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-123.jpg" alt=""><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-165.jpg" alt=""></section>
+
+  <section class="panel rv venue" style="margin-top:36px">
+    <p class="kick">สถานที่จัดงาน</p>
+    <p class="vn">BLOOMMORIES</p>
+    <p class="vs">บลูมโมรี่ · จังหวัดเชียงใหม่</p>
+    <a class="btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Bloommories+Chiang+Mai" target="_blank" rel="noopener">เปิดแผนที่นำทาง</a>
+  </section>
+
+  <section class="pair rv" style="padding-top:36px;padding-bottom:52px"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-172.jpg" alt=""><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-175.jpg" alt=""></section>
+
+  <section class="panel rv">
+    <div class="cd">
+      <div class="rule" style="margin-bottom:30px"></div>
+      <p class="kick-en">Save the date</p>
+      <p class="dt">30 · 10 · 2026</p>
+      <p class="thd">วันศุกร์ที่ ๓๐ ตุลาคม พ.ศ. ๒๕๖๙</p>
+      <div class="cd-grid">
+        <div><div class="cd-n" id="cd-d">--</div><div class="cd-u">วัน</div></div>
+        <div><div class="cd-n" id="cd-h">--</div><div class="cd-u">ชั่วโมง</div></div>
+        <div><div class="cd-n" id="cd-m">--</div><div class="cd-u">นาที</div></div>
+        <div><div class="cd-n" id="cd-s">--</div><div class="cd-u">วินาที</div></div>
+      </div>
+      <div class="rule" style="margin-top:30px"></div>
+    </div>
+  </section>
+
+  <section class="hero rv"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-309.jpg" alt=""></section>
+
+  <section class="trio rv" style="padding-top:8px">
+    <img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-227.jpg" alt=""><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-284.jpg" alt=""><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-306.jpg" alt="">
+  </section>
+
+  <section class="gal rv" style="padding-top:8px;padding-bottom:52px">
+    <img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-99.jpg" alt=""><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-162.jpg" alt="">
+    <img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-184.jpg" alt=""><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-231.jpg" alt="">
+    <img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-369.jpg" alt="" class="w">
+  </section>
+
+  <section class="panel rv rsvp" id="rsvp">
+    <p class="kick">ตอบรับคำเชิญ</p>
+
+    <!-- step 1 : choose -->
+    <div class="step on" id="stAsk">
+      <p class="q">ท่านสะดวกมาร่วมงานหรือไม่</p>
+      <div class="btns">
+        <button class="btn" id="bYes" type="button">ยินดีไปร่วมงาน</button>
+        <button class="btn" id="bNo" type="button">ไม่สะดวกไปร่วมงาน</button>
+      </div>
+    </div>
+
+    <!-- step 2a : attending -->
+    <div class="step" id="stYes">
+      <p class="q">ยินดีมากค่ะ รบกวนกรอกรายละเอียดสักนิดนะคะ</p>
+      <div class="form">
+        <p class="err" id="eYes">กรุณากรอกชื่อ – นามสกุลค่ะ</p>
+        <div class="fld">
+          <label for="yName">ชื่อ – นามสกุล</label>
+          <input id="yName" type="text" placeholder="ชื่อผู้ตอบรับ" autocomplete="name">
+        </div>
+        <div class="fld">
+          <label for="yQty">จำนวนผู้ร่วมงาน</label>
+          <input id="yQty" type="number" min="1" max="20" step="1" value="1" inputmode="numeric">
+        </div>
+        <div class="fld">
+          <label for="yTel">เบอร์โทรศัพท์</label>
+          <input id="yTel" type="tel" placeholder="08X-XXX-XXXX" inputmode="tel" autocomplete="tel">
+        </div>
+        <div class="fld">
+          <label for="ySide">มาในนามฝ่าย</label>
+          <select id="ySide">
+            <option>ฝ่ายเจ้าสาว (สุภาวดี)</option>
+            <option>ฝ่ายเจ้าบ่าว (นพรุจ)</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="yNote">หมายเหตุ (อาหารที่แพ้ / อื่น ๆ)</label>
+          <textarea id="yNote" placeholder="ไม่มีก็เว้นว่างได้เลยค่ะ"></textarea>
+        </div>
+        <button class="send" id="sYes" type="button">ส่งคำตอบรับ</button>
+        <button class="back" type="button" data-back="1">ย้อนกลับ</button>
+      </div>
+    </div>
+
+    <!-- step 2b : not attending -->
+    <div class="step" id="stNo">
+      <p class="q">ขอบคุณที่แจ้งให้ทราบนะคะ<br>หากต้องการร่วมแสดงความยินดีกับบ่าวสาว สแกนคิวอาร์โค้ดนี้ได้เลยค่ะ</p>
+      <div class="qrbox"><img src="https://nopparut-win.github.io/wedding/assets/qr-promptpay.jpg" alt="QR พร้อมเพย์ นาง นิธินาถ โตงิ้ว"></div>
+      <p class="qrcap">พร้อมเพย์ · รับเงินได้จากทุกธนาคาร</p>
+      <div class="form">
+        <p class="err" id="eNo">กรุณากรอกชื่อ – นามสกุลค่ะ</p>
+        <div class="fld">
+          <label for="nName">ชื่อ – นามสกุล</label>
+          <input id="nName" type="text" placeholder="ชื่อผู้ส่งคำอวยพร" autocomplete="name">
+        </div>
+        <div class="fld">
+          <label for="nWish">คำอวยพรถึงบ่าวสาว</label>
+          <textarea id="nWish" placeholder="เขียนถึงบ่าวสาวได้เลยค่ะ"></textarea>
+        </div>
+        <button class="send" id="sNo" type="button">ส่งคำอวยพร</button>
+        <button class="back" type="button" data-back="1">ย้อนกลับ</button>
+      </div>
+    </div>
+
+    <!-- step 3 : done -->
+    <div class="step" id="stDone">
+      <div class="done">
+        <div class="thin" style="margin:22px auto 0"></div>
+        <p class="dh">Thank You</p>
+        <p class="dp" id="doneMsg"></p>
+        <p class="warn" id="doneWarn" hidden>ระบบบันทึกคำตอบไม่สำเร็จ รบกวนกดส่งอีกครั้ง หรือส่งข้อความถึงบ่าวสาวทาง LINE นะคะ</p>
+        <a class="alt" id="lineShare" href="#" target="_blank" rel="noopener" hidden>ส่งข้อความทาง LINE</a>
+        <button class="back" type="button" data-back="1">แก้ไขคำตอบ</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rv">
+    <img class="mono sm" src="https://nopparut-win.github.io/wedding/assets/icons/monogram.png" alt="S and N">
+    <p class="fn">Supawadee &amp; Nopparut</p>
+    <p class="fd">30 . 10 . 2026</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var gate = document.getElementById('gate');
+  var opened = false, entered = false, ready = false;
+  document.body.classList.add('locked');
+
+  function openEnv(){
+    if(opened) return; opened = true;
+    gate.classList.add('on');
+    setTimeout(function(){ ready = true; }, 3000);
+  }
+  function enter(){
+    if(entered) return; entered = true;
+    gate.classList.add('gone');
+    document.body.classList.remove('locked');
+    setTimeout(function(){ gate.style.display = 'none'; window.scrollTo(0,0); }, 1100);
+  }
+  gate.addEventListener('click', function(e){
+    if(e.target.id === 'enterBtn'){ enter(); return; }
+    if(!opened){ openEnv(); return; }
+    if(ready){ enter(); }
+  });
+
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+  var T = new Date('2026-10-30T17:00:00+07:00').getTime();
+  function p(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var d = T - Date.now();
+    if(d < 0) d = 0;
+    var s = Math.floor(d / 1000);
+    document.getElementById('cd-d').textContent = Math.floor(s / 86400);
+    document.getElementById('cd-h').textContent = p(Math.floor(s / 3600) % 24);
+    document.getElementById('cd-m').textContent = p(Math.floor(s / 60) % 60);
+    document.getElementById('cd-s').textContent = p(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---- RSVP ----------------------------------------------------------
+     ส่งคำตอบเข้า Google Sheet ผ่าน google.script.run.saveRsvp(fields)
+     fields = { status, name, count, tel, side, note, wish }  (ชุดเดียวกับหน้าเดิม)
+     Code.gs ต้องมีฟังก์ชัน saveRsvp(fields) ที่คืนค่า { ok: true } เมื่อบันทึกสำเร็จ */
+
+  var steps = ['stAsk', 'stYes', 'stNo', 'stDone'];
+  var booting = true;
+  function show(id){
+    for(var i = 0; i < steps.length; i++){
+      var el = document.getElementById(steps[i]);
+      if(el) el.classList.toggle('on', steps[i] === id);
+    }
+    var sec = document.getElementById('rsvp');
+    if(sec && id !== 'stAsk' && !booting){
+      var top = sec.getBoundingClientRect().top + window.pageYOffset - 24;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }
+
+  var bYes = document.getElementById('bYes'),
+      bNo  = document.getElementById('bNo');
+
+  function pick(ok){
+    bYes.classList.toggle('sel', !!ok);
+    bNo.classList.toggle('sel', !ok);
+    show(ok ? 'stYes' : 'stNo');
+  }
+  bYes.addEventListener('click', function(){ pick(1); });
+  bNo.addEventListener('click', function(){ pick(0); });
+
+  function val(id){
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+  function fail(id, on){
+    var el = document.getElementById(id);
+    if(el) el.classList.toggle('show', !!on);
+  }
+  function toFields(data){
+    var yes = data.attend === 'yes';
+    return {
+      status: yes ? 'ยินดีไปร่วมงาน' : 'ไม่สะดวกไปร่วมงาน',
+      name:  data.name || '',
+      count: yes ? String(data.qty || 1) : '',
+      tel:   yes ? (data.tel  || '') : '',
+      side:  yes ? (data.side || '') : '',
+      note:  yes ? (data.note || '') : '',
+      wish:  yes ? '' : (data.wish || '')
+    };
+  }
+  function lineText(f){
+    var t = 'ตอบรับงานแต่ง สุภาวดี & นพรุจ (30 ต.ค. 2569)\n' +
+            'สถานะ: ' + f.status + '\n' +
+            'ชื่อ: ' + f.name;
+    if(f.count) t += '\nจำนวนผู้ร่วมงาน: ' + f.count + ' ท่าน';
+    if(f.tel)   t += '\nเบอร์โทร: ' + f.tel;
+    if(f.side)  t += '\nมาในนามฝ่าย: ' + f.side;
+    if(f.note)  t += '\nหมายเหตุ: ' + f.note;
+    if(f.wish)  t += '\nคำอวยพร: ' + f.wish;
+    return t;
+  }
+  /* บันทึกลงเครื่องผู้ตอบ แล้วส่งเข้า Google Sheet; cb(ok) ถูกเรียกเมื่อเสร็จ */
+  function save(data, cb){
+    try{ localStorage.setItem('sn_rsvp', JSON.stringify(data)); }catch(e){}
+    var f = toFields(data);
+    var link = document.getElementById('lineShare');
+    if(link) link.href = 'https://line.me/R/share?text=' + encodeURIComponent(lineText(f));
+    var done = false;
+    function end(ok){ if(done) return; done = true; cb(!!ok); }
+    try{
+      if(!(window.google && google.script && google.script.run)) throw new Error('no google.script');
+      google.script.run
+        .withSuccessHandler(function(res){ end(res && res.ok); })
+        .withFailureHandler(function(){ end(false); })
+        .saveRsvp(f);
+    }catch(e){ end(false); }
+  }
+  function sending(btn, on){
+    if(!btn) return;
+    if(on){ btn.dataset.label = btn.textContent; btn.disabled = true; btn.textContent = 'กำลังส่ง…'; }
+    else  { btn.disabled = false; btn.textContent = btn.dataset.label || btn.textContent; }
+  }
+  function finish(msg, ok){
+    var d = document.getElementById('doneMsg');
+    if(d) d.innerHTML = msg;
+    var w = document.getElementById('doneWarn'), l = document.getElementById('lineShare');
+    if(w) w.hidden = (ok !== false);
+    if(l) l.hidden = (ok !== false);
+    show('stDone');
+  }
+
+  document.getElementById('sYes').addEventListener('click', function(){
+    var name = val('yName');
+    if(!name){ fail('eYes', 1); document.getElementById('yName').focus(); return; }
+    fail('eYes', 0);
+    var qty = parseInt(val('yQty'), 10);
+    if(!(qty > 0)) qty = 1;
+    var btn = document.getElementById('sYes');
+    sending(btn, true);
+    save({ attend: 'yes', name: name, qty: qty, tel: val('yTel'),
+           side: val('ySide'), note: val('yNote'), at: new Date().toISOString() },
+      function(ok){
+        sending(btn, false);
+        finish('ขอบคุณค่ะ คุณ' + name + '<br>แล้วพบกันวันที่ ๓๐ ตุลาคม ๒๕๖๙ นะคะ', ok);
+      });
+  });
+
+  document.getElementById('sNo').addEventListener('click', function(){
+    var name = val('nName');
+    if(!name){ fail('eNo', 1); document.getElementById('nName').focus(); return; }
+    fail('eNo', 0);
+    var btn = document.getElementById('sNo');
+    sending(btn, true);
+    save({ attend: 'no', name: name, wish: val('nWish'),
+           at: new Date().toISOString() },
+      function(ok){
+        sending(btn, false);
+        finish('ขอบคุณสำหรับคำอวยพรนะคะ คุณ' + name + '<br>บ่าวสาวซาบซึ้งใจมากค่ะ', ok);
+      });
+  });
+
+  var backs = document.querySelectorAll('[data-back]');
+  for(var i = 0; i < backs.length; i++){
+    backs[i].addEventListener('click', function(){
+      bYes.classList.remove('sel');
+      bNo.classList.remove('sel');
+      fail('eYes', 0); fail('eNo', 0);
+      show('stAsk');
+    });
+  }
+
+  var prev = null;
+  try{ prev = JSON.parse(localStorage.getItem('sn_rsvp') || 'null'); }catch(e){}
+  if(prev && prev.name){
+    bYes.classList.toggle('sel', prev.attend === 'yes');
+    bNo.classList.toggle('sel', prev.attend !== 'yes');
+    finish(prev.attend === 'yes'
+      ? 'ท่านได้ตอบรับไว้แล้วค่ะ คุณ' + prev.name + '<br>แล้วพบกันวันที่ ๓๐ ตุลาคม ๒๕๖๙ นะคะ'
+      : 'ขอบคุณสำหรับคำอวยพรนะคะ คุณ' + prev.name + '<br>บ่าวสาวซาบซึ้งใจมากค่ะ', true);
+  }
+  booting = false;
+})();
+</script>
+
+</body>
+</html>
