@@ -82,19 +82,16 @@ body.locked{overflow:hidden;height:100%}
 .pop img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border-radius:1px}
 #gate.on .pop{opacity:1}
 
-/* ดอกไม้ประดับตอนซองเปิด */
-.flo{position:absolute;opacity:0;
-  transition:transform 1.15s cubic-bezier(.22,1.1,.36,1), opacity .8s;
-  filter:drop-shadow(0 9px 15px rgba(0,0,0,.3))}
+/* ช่อดอกไม้ประดับมุมซองตอนเปิด */
+.flo{position:absolute;left:50%;top:0;z-index:10;opacity:0;
+  transition:transform 1.2s cubic-bezier(.22,1.1,.36,1), opacity .8s;
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.34))}
 .flo img{width:100%;display:block}
-.fA{width:272px;transform:translate(-50%,-150px) scale(.55)}
-.flo.side{left:50%;top:0;width:106px;z-index:10}
-.fL{transform:translate(-150%,-4px) scale(.5) rotate(-6deg)}
-.fR{transform:translate(50%,0) scale(.5) rotate(5deg)}
+.fL{width:100px;transform:translate(-186px,26px) scale(.5)}
+.fR{width:84px;transform:translate(104px,10px) scale(.5)}
 #gate.on .flo{opacity:1}
-#gate.on .fA{transform:translate(-50%,-224px) scale(1);transition-delay:.7s}
-#gate.on .fL{transform:translate(-150%,-34px) scale(1) rotate(-6deg);transition-delay:1.3s}
-#gate.on .fR{transform:translate(50%,-30px) scale(1) rotate(5deg);transition-delay:1.42s}
+#gate.on .fL{transform:translate(-186px,-38px) scale(1);transition-delay:1.26s}
+#gate.on .fR{transform:translate(104px,-60px) scale(1);transition-delay:1.4s}
 #gate.on .p1{transform:translate(-142%,-132px) rotate(-15deg) scale(1);transition-delay:.85s}
 #gate.on .p2{transform:translate(-50%,-168px) rotate(2deg) scale(1.04);transition-delay:1.02s}
 #gate.on .p3{transform:translate(42%,-128px) rotate(14deg) scale(1);transition-delay:1.19s}
@@ -149,35 +146,64 @@ body.locked{overflow:hidden;height:100%}
 .sod .script{font-family:var(--en);font-style:italic;font-size:26px;
   color:var(--brown);margin:0}
 
-/* ภาพโพลารอยด์ + ดอกไม้ แทนโลโก้ */
-.fanart{position:relative;width:336px;height:300px;margin:0 auto 34px}
-.fanart .fa-arch{position:absolute;left:50%;top:0;width:330px;
-  transform:translateX(-50%);opacity:.96}
-.fanart .fan{position:absolute;left:50%;top:78px;width:0;height:0}
-.fanart .fp{position:absolute;width:112px;padding:7px 7px 22px;background:#FFFDF6;
-  border-radius:2px;box-shadow:0 12px 24px rgba(72,56,38,.22)}
+/* ภาพโพลารอยด์ + ช่อดอกไม้ แทนโลโก้ */
+.fanart{position:relative;width:453px;height:258px;margin:0 auto 30px}
+.fanart .fa-bq{position:absolute;display:block;
+  filter:drop-shadow(0 12px 20px rgba(72,56,38,.18))}
+.fanart .fa-l{left:7px;top:42px;width:153px;transform:rotate(-18deg)}
+.fanart .fa-r{left:324px;top:3px;width:119px;transform:rotate(16deg)}
+.fanart .fan{position:absolute;left:234px;top:32px;width:0;height:0;z-index:2}
+.fanart .fp{position:absolute;width:101px;padding:6px 6px 20px;background:#FFFDF6;
+  border-radius:2px;box-shadow:0 14px 26px rgba(72,56,38,.20)}
 .fanart .fp img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
-.fanart .f1{transform:translate(-118%,14px) rotate(-11deg)}
-.fanart .f3{transform:translate(18%,12px) rotate(10deg)}
-.fanart .f2{transform:translate(-50%,0) rotate(-1deg);z-index:2}
-.fanart .fa-sp{position:absolute;bottom:-14px;width:122px;opacity:.95}
-.fanart .fa-l{left:-26px}
-.fanart .fa-r{right:-26px}
-@media (max-width:400px){
-  .fanart{width:300px;height:272px}
-  .fanart .fa-arch{width:296px}
-  .fanart .fp{width:100px}
-  .fanart .fan{top:70px}
-  .fanart .fa-sp{width:108px}
-  .fanart .fa-l{left:-16px}
-  .fanart .fa-r{right:-16px}
+.fanart .f1{transform:translate(-122%,14px) rotate(-13deg)}
+.fanart .f3{transform:translate(22%,13px) rotate(12deg)}
+.fanart .f2{transform:translate(-50%,10px) rotate(-1deg) scale(1.12);z-index:2}
+@media (max-width:540px){
+  .fanart{width:392px;height:224px}
+  .fanart .fa-l{left:6px;top:37px;width:133px}
+  .fanart .fa-r{left:281px;top:2px;width:103px}
+  .fanart .fan{left:203px;top:27px}
+  .fanart .fp{width:87px;padding:5px 5px 17px}
+  .fanart .f1{transform:translate(-122%,12px) rotate(-13deg)}
+  .fanart .f3{transform:translate(22%,11px) rotate(12deg)}
+  .fanart .f2{transform:translate(-50%,9px) rotate(-1deg) scale(1.12)}
 }
-
+@media (max-width:470px){
+  .fanart{width:332px;height:189px}
+  .fanart .fa-l{left:5px;top:31px;width:112px}
+  .fanart .fa-r{left:238px;top:2px;width:87px}
+  .fanart .fan{left:172px;top:23px}
+  .fanart .fp{width:74px;padding:5px 5px 15px}
+  .fanart .f1{transform:translate(-122%,11px) rotate(-13deg)}
+  .fanart .f3{transform:translate(22%,9px) rotate(12deg)}
+  .fanart .f2{transform:translate(-50%,7px) rotate(-1deg) scale(1.12)}
+}
+@media (max-width:410px){
+  .fanart{width:282px;height:161px}
+  .fanart .fa-l{left:4px;top:26px;width:95px}
+  .fanart .fa-r{left:202px;top:2px;width:74px}
+  .fanart .fan{left:146px;top:20px}
+  .fanart .fp{width:63px;padding:4px 4px 12px}
+  .fanart .f1{transform:translate(-122%,9px) rotate(-13deg)}
+  .fanart .f3{transform:translate(22%,8px) rotate(12deg)}
+  .fanart .f2{transform:translate(-50%,6px) rotate(-1deg) scale(1.12)}
+}
+@media (max-width:360px){
+  .fanart{width:241px;height:138px}
+  .fanart .fa-l{left:4px;top:23px;width:82px}
+  .fanart .fa-r{left:173px;top:1px;width:63px}
+  .fanart .fan{left:125px;top:17px}
+  .fanart .fp{width:54px;padding:3px 3px 11px}
+  .fanart .f1{transform:translate(-122%,8px) rotate(-13deg)}
+  .fanart .f3{transform:translate(22%,7px) rotate(12deg)}
+  .fanart .f2{transform:translate(-50%,5px) rotate(-1deg) scale(1.12)}
+}
 .mono{display:block;margin:0 auto}
 .mono.lg{width:132px}
 .mono.sm{width:104px;opacity:.95}
 
-.inv{padding:10px 30px 52px;text-align:center}
+.inv{padding:10px 30px 52px;text-align:center;overflow:hidden}
 .inv .host{font-size:14.5px;color:var(--soft);margin:22px 0 0;line-height:2}
 .inv .lead{font-size:13.5px;color:var(--soft);margin:22px auto 0;max-width:330px;line-height:2}
 .inv .n1{font-family:var(--dp);font-size:32px;letter-spacing:.16em;margin:26px 0 0;line-height:1.2}
@@ -299,11 +325,10 @@ footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
   #gate.on .p1{transform:translate(-138%,-116px) rotate(-15deg) scale(1)}
   #gate.on .p2{transform:translate(-50%,-148px) rotate(2deg) scale(1.04)}
   #gate.on .p3{transform:translate(38%,-112px) rotate(14deg) scale(1)}
-  .fA{width:234px}
-  .flo.side{width:92px}
-  #gate.on .fA{transform:translate(-50%,-196px) scale(1)}
-  #gate.on .fL{transform:translate(-146%,-30px) scale(1) rotate(-6deg)}
-  #gate.on .fR{transform:translate(46%,-26px) scale(1) rotate(5deg)}
+  .fL{width:86px}
+  .fR{width:72px}
+  #gate.on .fL{transform:translate(-160px,-32px) scale(1)}
+  #gate.on .fR{transform:translate(89px,-52px) scale(1)}
   .tag .oval{width:176px}
   .gname{font-size:24px}
   .inv .n1{font-size:26px}
@@ -324,7 +349,6 @@ footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
       <div class="env">
         <div class="env-body"></div>
         <div class="pops">
-          <div class="flo fA"><img src="https://nopparut-win.github.io/wedding/assets/deco/flower-arch.png" alt=""></div>
           <div class="pop p1"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-17.jpg" alt=""></div>
           <div class="pop p2"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-203.jpg" alt=""></div>
           <div class="pop p3"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-313.jpg" alt=""></div>
@@ -332,8 +356,8 @@ footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
         <div class="env-front"></div>
         <div class="env-flap"></div>
         <div class="seal"><img src="https://nopparut-win.github.io/wedding/assets/deco/wax-seal.png" alt=""></div>
-        <div class="flo side fL"><img src="https://nopparut-win.github.io/wedding/assets/deco/flower-left.png" alt=""></div>
-        <div class="flo side fR"><img src="https://nopparut-win.github.io/wedding/assets/deco/flower-right.png" alt=""></div>
+        <div class="flo fL"><img src="https://nopparut-win.github.io/wedding/assets/deco/bouquet-left.png" alt=""></div>
+        <div class="flo fR"><img src="https://nopparut-win.github.io/wedding/assets/deco/bouquet-right.png" alt=""></div>
       </div>
       <div class="tag"><div class="oval">
         <div class="t1">Save our Date</div>
@@ -359,14 +383,13 @@ footer .fd{font-family:var(--dp);font-size:13px;letter-spacing:.24em;
 
   <section class="inv rv">
     <div class="fanart">
-      <img class="fa-arch" src="https://nopparut-win.github.io/wedding/assets/deco/flower-arch.png" alt="">
+      <img class="fa-bq fa-l" src="https://nopparut-win.github.io/wedding/assets/deco/bouquet-left.png" alt="">
+      <img class="fa-bq fa-r" src="https://nopparut-win.github.io/wedding/assets/deco/bouquet-right.png" alt="">
       <div class="fan">
         <div class="fp f1"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-17.jpg" alt=""></div>
         <div class="fp f3"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-313.jpg" alt=""></div>
         <div class="fp f2"><img src="https://nopparut-win.github.io/wedding/assets/photos/pre-wedding-203.jpg" alt=""></div>
       </div>
-      <img class="fa-sp fa-l" src="https://nopparut-win.github.io/wedding/assets/deco/flower-left.png" alt="">
-      <img class="fa-sp fa-r" src="https://nopparut-win.github.io/wedding/assets/deco/flower-right.png" alt="">
     </div>
     <p class="host">นายจิรวัฒน์ สุกใส · นางธัญพร สุกใส<br>นางนิธินาถ โตงิ้ว</p>
     <p class="lead">มีความยินดีขอเรียนเชิญท่านเพื่อเป็นเกียรติ<br>เนื่องในพิธีมงคลสมรสระหว่าง</p>
